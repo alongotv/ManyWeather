@@ -3,6 +3,7 @@ package com.alongo.manyweather
 import android.app.Activity
 import android.app.Application
 import android.app.Service
+import com.alongo.manyweather.di.Injector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -20,7 +21,7 @@ class AppDelegate : Application(), HasActivityInjector, HasServiceInjector {
 
     override fun onCreate() {
         super.onCreate()
-
+        Injector.init(this)
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {
