@@ -13,7 +13,7 @@ interface WeatherAPI {
     fun getWeatherByCityName(
         @Query("q") cityName: String,
         @Query("appid") openWeatherToken: String,
-        @Query("units") meausurementUnit: String = "metric"
+        @Query("units") measurementUnit: String = "metric"
     ): Observable<Weather>
 
     @Headers("Content-Type: application/json")
@@ -22,6 +22,6 @@ interface WeatherAPI {
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
         @Query("appid") openWeatherToken: String,
-        @Query("units") meausurementUnit: String = "metric"
+        @Query("units") measurementUnit: String = "metric"
     ): Observable<Weather>
 }
