@@ -11,11 +11,19 @@ import com.alongo.manyweather.ui.data.BaseFragment
 import com.alongo.manyweather.utilities.GeolocationProvider
 import com.alongo.manyweather.utilities.PERMISSION_GEOLOCATION_CODE
 import com.alongo.manyweather.utilities.PermissionHelper
+import com.alongo.manyweather.utilities.WEATHER_API_ICON_STORAGE_ENDPOINT
+import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding4.view.clicks
+import doOnFirst
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_geolocation_weather.*
+import kotlinx.android.synthetic.main.fragment_geolocation_weather.view.*
+import kotlinx.android.synthetic.main.fragment_main.view.*
+import kotlinx.android.synthetic.main.layout_weather_forecast.*
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.format.DateTimeFormatter
 import javax.inject.Inject
 
 class GeolocationWeatherFragment : BaseFragment() {
@@ -32,18 +40,31 @@ class GeolocationWeatherFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.fragment_geolocation_weather, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_geolocation_weather, container, false)
+        view.includedLayoutWeatherForecastGeolocationWeatherFragment.visibility = View.INVISIBLE
+        return view    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = viewModelFactory.create(GeolocationWeatherViewModel::class.java)
 
-        val weatherSubscription = viewModel.weatherSubject.subscribe { weather ->
-            textViewLocationFragmentWeatherGeolocation.text =
-                "${weather.name}, ${weather.weatherInternalParameter.country}"
-            textViewTemperatureFragmentWeatherGeolocation.text =
-                "${weather.weatherData.temperature} °C"
+        val weatherSubscription = viewModel.weatherSubject.doOnFirst {
+            view?.includedLayoutWeatherForecastGeolocationWeatherFragment?.visibility = View.VISIBLE
+        }.subscribe { weather ->
+
+            val dateStr: String = LocalDateTime.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy | hh:mm a"))
+            textViewLatestRequestDateTime.text = dateStr
+            textViewLocationLayoutWeatherForecast.text = "${weather.name}, ${weather.weatherInternalParameter.country}"
+            textViewCurrentTemperatureLayoutWeatherForecast.text = "${String.format("%.1f", weather.weatherData.temperature)}"
+            weather.weatherStateList.first().let {
+                textViewWeatherStateWeatherForecastLayout.text = it.title
+                Glide.with(inflaterContext).load(WEATHER_API_ICON_STORAGE_ENDPOINT + it.iconName + ".png").into(imageViewWeatherStateWeatherForecastLayout)
+            }
+            textViewMaxTempLayoutWeatherForecast.text =  "${String.format("%.1f", weather.weatherData.temp_max)} °C"
+            textViewMinTempLayoutWeatherForecast.text =  "${String.format("%.1f", weather.weatherData.temp_min)} °C"
+            textViewHumidityLayoutWeatherForecast.text = "${weather.weatherData.humidity} %"
+            textViewPressureLayoutWeatherForecast.text = "${weather.weatherData.pressure} hPa"
+            textViewWindLayoutWeatherForecast.text = "${String.format("%.1f", weather.windState.speed)} m/s"
         }
 
         compositeDisposable.add(weatherSubscription)

@@ -6,35 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.GeolocationWeatherFragment">
 
-    <TextView
-        android:id="@+id/textViewTemperatureFragmentWeatherGeolocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Temperature: unknown"
-        android:textColor="@color/colorGray999"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLocationFragmentWeatherGeolocation" />
-
-    <TextView
-        android:id="@+id/textViewLocationFragmentWeatherGeolocation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="24dp"
-        android:gravity="center"
-        android:text="Location"
-        android:textColor="@color/colorBlack222"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonUpdateWeatherFragmentWeatherGeolocation"
         android:layout_width="wrap_content"
@@ -44,7 +15,17 @@
         android:layout_marginEnd="163dp"
         android:text="Update"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTemperatureFragmentWeatherGeolocation" />
+        app:layout_constraintTop_toBottomOf="@+id/includedLayoutWeatherForecastGeolocationWeatherFragment" />
+
+    <include
+        android:id="@+id/includedLayoutWeatherForecastGeolocationWeatherFragment"
+        layout="@layout/layout_weather_forecast"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
