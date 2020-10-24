@@ -1,7 +1,7 @@
 package com.alongo.manyweather.ui.fragment
 
 import androidx.lifecycle.ViewModel
-import com.alongo.manyweather.data.Weather
+import com.alongo.manyweather.data.weather.Weather
 import com.alongo.manyweather.remote.WeatherAPI
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
