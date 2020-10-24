@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/layerLocationBackgroundWeatherForecastlayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#140D9FEA"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLocationLayoutWeatherForecast"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLocationWeatherForecastLayout"
+        app:layout_constraintStart_toStartOf="@+id/textViewLocationLayoutWeatherForecast"
+        app:layout_constraintTop_toTopOf="@+id/textViewLocationLayoutWeatherForecast"></View>
+
+    <TextView
+        android:id="@+id/textViewCurrentTemperatureLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/barlow_light"
+        android:text="0"
+        android:textColor="@android:color/black"
+        android:textSize="64sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTopBlockBottomWeatherForecastLayout"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDegreesWeatherForecastLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/textViewWeatherStateWeatherForecastLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLocationLayoutWeatherForecast" />
+
+    <TextView
+        android:id="@+id/textViewLocationLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:paddingStart="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Location"
+        android:textColor="#0DA0EA"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewLocationWeatherForecastLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDegreesWeatherForecastLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="°C"
+        android:textColor="@color/colorGray999"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCurrentTemperatureLayoutWeatherForecast"
+        app:layout_constraintEnd_toStartOf="@+id/textViewMaxTempLayoutWeatherForecast"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewCurrentTemperatureLayoutWeatherForecast"
+        app:layout_constraintTop_toTopOf="@+id/textViewCurrentTemperatureLayoutWeatherForecast"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <ImageView
+        android:id="@+id/imageViewLocationWeatherForecastLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLocationLayoutWeatherForecast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewLocationLayoutWeatherForecast"
+        app:srcCompat="@drawable/drawable_icon_geolocation_blue" />
+
+    <TextView
+        android:id="@+id/textViewLatestRequestDateTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="Last Request Time"
+        android:textColor="@color/colorGray999"
+        app:layout_constraintEnd_toStartOf="@+id/textViewLocationLayoutWeatherForecast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewWeatherStateWeatherForecastLayout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewCurrentTemperatureLayoutWeatherForecast"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewCurrentTemperatureLayoutWeatherForecast"
+        app:srcCompat="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textViewWeatherStateWeatherForecastLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16dp"
+        android:text="Weather State"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCurrentTemperatureLayoutWeatherForecast"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewWeatherStateWeatherForecastLayout"
+        app:layout_constraintStart_toStartOf="@+id/imageViewWeatherStateWeatherForecastLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewWeatherStateWeatherForecastLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewMaxTempLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:text="\?°C"
+        android:textColor="@color/colorGray777"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewMaxTempWeatherForecastLayout"
+        app:layout_constraintTop_toTopOf="@+id/textViewDegreesWeatherForecastLayout" />
+
+    <TextView
+        android:id="@+id/textViewMinTempLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        android:text="\?°C"
+        android:textColor="@color/colorGray777"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDegreesWeatherForecastLayout"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewMinTempWeatherForecastLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMaxTempLayoutWeatherForecast" />
+
+    <ImageView
+        android:id="@+id/imageViewMaxTempWeatherForecastLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewMaxTempLayoutWeatherForecast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewMaxTempLayoutWeatherForecast"
+        app:srcCompat="@drawable/ic_gray_arrow_up" />
+
+    <ImageView
+        android:id="@+id/imageViewMinTempWeatherForecastLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewMinTempLayoutWeatherForecast"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewMaxTempWeatherForecastLayout"
+        app:layout_constraintTop_toTopOf="@+id/textViewMinTempLayoutWeatherForecast"
+        app:srcCompat="@drawable/ic_gray_arrow_down" />
+
+    <ImageView
+        android:id="@+id/imageViewPressureWeatherForecastLayout"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewWindWeatherForecastLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewHumidityWeatherForecastLayout"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopBlockBottomWeatherForecastLayout"
+        app:srcCompat="@drawable/drawable_barometer_gray" />
+
+    <TextView
+        android:id="@+id/textViewWindLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="\? m/s"
+        android:textColor="@color/colorGray444"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewWindWeatherForecastLayout"
+        app:layout_constraintStart_toStartOf="@+id/imageViewWindWeatherForecastLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewWindWeatherForecastLayout" />
+
+    <TextView
+        android:id="@+id/textViewHumidityLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="\?%"
+        android:textColor="@color/colorGray444"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewHumidityWeatherForecastLayout"
+        app:layout_constraintStart_toStartOf="@+id/imageViewHumidityWeatherForecastLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewHumidityWeatherForecastLayout" />
+
+    <TextView
+        android:id="@+id/textViewPressureLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="\? hPa"
+        android:textColor="@color/colorGray444"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewPressureWeatherForecastLayout"
+        app:layout_constraintStart_toStartOf="@+id/imageViewPressureWeatherForecastLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPressureWeatherForecastLayout" />
+
+    <TextView
+        android:id="@+id/textViewWindCaptionLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Wind"
+        android:textColor="@color/colorGray999"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewWindLayoutWeatherForecast"
+        app:layout_constraintStart_toStartOf="@+id/textViewWindLayoutWeatherForecast"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWindLayoutWeatherForecast" />
+
+    <TextView
+        android:id="@+id/textViewHumidityCaptionLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Humidity"
+        android:textColor="@color/colorGray999"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewHumidityLayoutWeatherForecast"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/textViewHumidityLayoutWeatherForecast"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHumidityLayoutWeatherForecast" />
+
+    <TextView
+        android:id="@+id/textViewPressureCaptionLayoutWeatherForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16dp"
+        android:text="Pressure"
+        android:textColor="@color/colorGray999"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPressureLayoutWeatherForecast"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/textViewPressureLayoutWeatherForecast"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPressureLayoutWeatherForecast" />
+
+    <ImageView
+        android:id="@+id/imageViewWindWeatherForecastLayout"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPressureWeatherForecastLayout"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopBlockBottomWeatherForecastLayout"
+        app:srcCompat="@drawable/drawable_wind_gray" />
+
+    <ImageView
+        android:id="@+id/imageViewHumidityWeatherForecastLayout"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewPressureWeatherForecastLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopBlockBottomWeatherForecastLayout"
+        app:srcCompat="@drawable/drawable_humidity_gray" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTopBlockBottomWeatherForecastLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="146dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
