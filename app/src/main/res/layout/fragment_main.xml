@@ -6,44 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.MainFragment" >
 
-    <TextView
-        android:id="@+id/textViewLocation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="24dp"
-        android:gravity="center"
-        android:text="Location"
-        android:textColor="@color/colorBlack222"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewTemperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Temperature"
-        android:textColor="@color/colorGray999"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTemperature">
+        app:layout_constraintTop_toBottomOf="@+id/includedLayoutWeatherForecastMainFragment">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextCity"
@@ -51,4 +22,13 @@
             android:layout_height="wrap_content"
             android:hint="Enter city name" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <include
+        android:id="@+id/includedLayoutWeatherForecastMainFragment"
+        layout="@layout/layout_weather_forecast"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
