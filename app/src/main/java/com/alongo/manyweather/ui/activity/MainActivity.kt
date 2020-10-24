@@ -23,7 +23,6 @@ class MainActivity : DaggerAppCompatActivity() {
                 }
                 R.id.navigation_geolocation-> {
                     replaceFragment(R.id.fragmentContainer, GeolocationWeatherFragment())
-
                     return@setOnNavigationItemSelectedListener true
                 }
             }
