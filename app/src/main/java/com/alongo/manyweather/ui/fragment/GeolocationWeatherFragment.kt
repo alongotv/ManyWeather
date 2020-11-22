@@ -14,13 +14,12 @@ import com.alongo.manyweather.utilities.PermissionHelper
 import com.alongo.manyweather.utilities.WEATHER_API_ICON_STORAGE_ENDPOINT
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding4.view.clicks
-import doOnFirst
+import doBeforeFirst
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_geolocation_weather.*
 import kotlinx.android.synthetic.main.fragment_geolocation_weather.view.*
-import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.layout_weather_forecast.*
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
@@ -48,7 +47,7 @@ class GeolocationWeatherFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = viewModelFactory.create(GeolocationWeatherViewModel::class.java)
 
-        val weatherSubscription = viewModel.weatherSubject.doOnFirst {
+        val weatherSubscription = viewModel.weatherSubject.doBeforeFirst {
             view?.includedLayoutWeatherForecastGeolocationWeatherFragment?.visibility = View.VISIBLE
         }.subscribe { weather ->
 
