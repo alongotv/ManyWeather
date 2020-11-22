@@ -78,4 +78,28 @@ class MainFragment : BaseFragment() {
                 viewModel.getWeatherByCityName(cityNameString)
             }
     }
+
+    private fun bindWeatherToUi(weather: Weather) {
+        val dateStr: String =
+            LocalDateTime.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy | hh:mm a"))
+        textViewLatestRequestDateTime.text = dateStr
+        textViewLocationLayoutWeatherForecast.text =
+            "${weather.name}, ${weather.weatherInternalParameter.country}"
+        textViewCurrentTemperatureLayoutWeatherForecast.text =
+            "${String.format("%.1f", weather.weatherData.temperature)}"
+        weather.weatherStateList.first().let {
+            textViewWeatherStateWeatherForecastLayout.text = it.title
+            Glide.with(inflaterContext)
+                .load(WEATHER_API_ICON_STORAGE_ENDPOINT + it.iconName + ".png")
+                .into(imageViewWeatherStateWeatherForecastLayout)
+        }
+        textViewMaxTempLayoutWeatherForecast.text =
+            "${String.format("%.1f", weather.weatherData.temp_max)} °C"
+        textViewMinTempLayoutWeatherForecast.text =
+            "${String.format("%.1f", weather.weatherData.temp_min)} °C"
+        textViewHumidityLayoutWeatherForecast.text = "${weather.weatherData.humidity} %"
+        textViewPressureLayoutWeatherForecast.text = "${weather.weatherData.pressure} hPa"
+        textViewWindLayoutWeatherForecast.text =
+            "${String.format("%.1f", weather.windState.speed)} m/s"
+    }
 }
