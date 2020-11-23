@@ -1,3 +1,5 @@
+package com.alongo.manyweather.utilities
+
 import io.reactivex.Observable
 import kotlinx.coroutines.flow.*
 
