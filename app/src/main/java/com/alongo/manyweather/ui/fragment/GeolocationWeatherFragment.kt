@@ -14,7 +14,7 @@ import com.alongo.manyweather.utilities.PermissionHelper
 import com.alongo.manyweather.utilities.WEATHER_API_ICON_STORAGE_ENDPOINT
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding4.view.clicks
-import doBeforeFirst
+import com.alongo.manyweather.utilities.doBeforeFirst
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
