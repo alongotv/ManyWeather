@@ -14,7 +14,7 @@ import com.alongo.manyweather.ui.data.BaseFragment
 import com.alongo.manyweather.utilities.WEATHER_API_ICON_STORAGE_ENDPOINT
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding4.widget.textChanges
-import doOnFirst
+import com.alongo.manyweather.utilities.doBeforeFirst
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.layout_weather_forecast.*
@@ -45,7 +45,7 @@ class MainFragment : BaseFragment() {
 
         viewModel.weatherData
             .asFlow()
-            .doOnFirst { view?.includedLayoutWeatherForecastMainFragment?.visibility = View.VISIBLE }
+            .doBeforeFirst { view?.includedLayoutWeatherForecastMainFragment?.visibility = View.VISIBLE }
             .asLiveData()
             .observe(viewLifecycleOwner, Observer<Weather> { weather ->
                 bindWeatherToUi(weather)
