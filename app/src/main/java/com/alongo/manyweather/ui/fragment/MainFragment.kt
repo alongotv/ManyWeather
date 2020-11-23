@@ -14,7 +14,7 @@ import com.alongo.manyweather.ui.data.BaseFragment
 import com.alongo.manyweather.utilities.WEATHER_API_ICON_STORAGE_ENDPOINT
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding4.widget.textChanges
-import doBeforeFirst
+import com.alongo.manyweather.utilities.doBeforeFirst
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.layout_weather_forecast.*
