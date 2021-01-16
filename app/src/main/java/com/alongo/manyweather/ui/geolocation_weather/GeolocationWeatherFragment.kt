@@ -1,4 +1,4 @@
-package com.alongo.manyweather.ui.fragment
+package com.alongo.manyweather.ui.geolocation_weather
 
 import android.os.Bundle
 import android.view.LayoutInflater

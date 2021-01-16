@@ -1,4 +1,4 @@
-package com.alongo.manyweather.ui.fragment
+package com.alongo.manyweather.ui.geolocation_weather
 
 import androidx.lifecycle.ViewModel
 import com.alongo.manyweather.data.model.weather.Weather

@@ -1,6 +1,6 @@
 package com.alongo.manyweather.di
 
-import com.alongo.manyweather.ui.activity.MainActivity
+import com.alongo.manyweather.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

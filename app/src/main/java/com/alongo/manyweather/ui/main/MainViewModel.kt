@@ -1,4 +1,4 @@
-package com.alongo.manyweather.ui.fragment
+package com.alongo.manyweather.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
