@@ -1,6 +1,6 @@
-package com.alongo.manyweather.remote
+package com.alongo.manyweather.data.networking
 
-import com.alongo.manyweather.data.weather.Weather
+import com.alongo.manyweather.data.model.weather.Weather
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Headers
