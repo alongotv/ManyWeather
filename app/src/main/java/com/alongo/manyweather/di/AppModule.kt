@@ -1,6 +1,6 @@
 package com.alongo.manyweather.di
 
-import com.alongo.manyweather.remote.WeatherAPI
+import com.alongo.manyweather.data.networking.WeatherAPI
 import com.alongo.manyweather.utilities.WEATHER_API_ENDPOINT
 import com.google.gson.GsonBuilder
 import dagger.Module

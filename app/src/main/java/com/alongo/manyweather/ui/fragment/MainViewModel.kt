@@ -3,8 +3,8 @@ package com.alongo.manyweather.ui.fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.alongo.manyweather.data.weather.Weather
-import com.alongo.manyweather.remote.WeatherAPI
+import com.alongo.manyweather.data.model.weather.Weather
+import com.alongo.manyweather.data.networking.WeatherAPI
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
