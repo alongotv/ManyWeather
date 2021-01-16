@@ -1,4 +1,4 @@
-package com.alongo.manyweather.ui.main
+package com.alongo.manyweather.presentation.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.lifecycle.asFlow
 import androidx.lifecycle.asLiveData
 import com.alongo.manyweather.R
 import com.alongo.manyweather.data.model.weather.Weather
-import com.alongo.manyweather.ui.data.BaseFragment
+import com.alongo.manyweather.presentation.data.BaseFragment
 import com.alongo.manyweather.utilities.WEATHER_API_ICON_STORAGE_ENDPOINT
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding4.widget.textChanges

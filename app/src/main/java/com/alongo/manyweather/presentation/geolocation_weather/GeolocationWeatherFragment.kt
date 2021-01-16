@@ -1,4 +1,4 @@
-package com.alongo.manyweather.ui.geolocation_weather
+package com.alongo.manyweather.presentation.geolocation_weather
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.alongo.manyweather.R
-import com.alongo.manyweather.ui.data.BaseFragment
+import com.alongo.manyweather.presentation.data.BaseFragment
 import com.alongo.manyweather.utilities.GeolocationProvider
 import com.alongo.manyweather.utilities.PERMISSION_GEOLOCATION_CODE
 import com.alongo.manyweather.utilities.PermissionHelper

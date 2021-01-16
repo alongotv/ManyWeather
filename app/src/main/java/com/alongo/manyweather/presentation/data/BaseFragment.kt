@@ -1,4 +1,4 @@
-package com.alongo.manyweather.ui.data
+package com.alongo.manyweather.presentation.data
 
 import android.content.Context
 import android.os.Bundle

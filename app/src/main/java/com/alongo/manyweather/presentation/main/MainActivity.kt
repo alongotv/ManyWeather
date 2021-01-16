@@ -1,9 +1,9 @@
-package com.alongo.manyweather.ui.main
+package com.alongo.manyweather.presentation.main
 
 import android.os.Bundle
 import android.view.MenuItem
 import com.alongo.manyweather.R
-import com.alongo.manyweather.ui.geolocation_weather.GeolocationWeatherFragment
+import com.alongo.manyweather.presentation.geolocation_weather.GeolocationWeatherFragment
 import com.alongo.manyweather.utilities.replaceFragment
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
