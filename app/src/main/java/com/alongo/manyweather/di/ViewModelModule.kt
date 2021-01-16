@@ -2,8 +2,8 @@ package com.alongo.manyweather.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.alongo.manyweather.ui.geolocation_weather.GeolocationWeatherViewModel
-import com.alongo.manyweather.ui.main.MainViewModel
+import com.alongo.manyweather.presentation.geolocation_weather.GeolocationWeatherViewModel
+import com.alongo.manyweather.presentation.main.MainViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

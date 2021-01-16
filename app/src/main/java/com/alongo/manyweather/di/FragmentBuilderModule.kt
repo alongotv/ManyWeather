@@ -1,7 +1,7 @@
 package com.alongo.manyweather.di
 
-import com.alongo.manyweather.ui.geolocation_weather.GeolocationWeatherFragment
-import com.alongo.manyweather.ui.main.MainFragment
+import com.alongo.manyweather.presentation.geolocation_weather.GeolocationWeatherFragment
+import com.alongo.manyweather.presentation.main.MainFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
