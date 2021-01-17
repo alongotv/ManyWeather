@@ -1,6 +1,6 @@
-package com.alongo.manyweather.data.model.weather
+package com.alongo.manyweather.data.model.entity.weather
 
-import com.alongo.manyweather.data.model.Coordinate
+import com.alongo.manyweather.data.model.entity.Coordinate
 import com.google.gson.annotations.SerializedName
 
 data class Weather(

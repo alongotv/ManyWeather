@@ -1,4 +1,4 @@
-package com.alongo.manyweather.data.model.weather
+package com.alongo.manyweather.data.model.entity.weather
 
 data class WeatherInternalParameter(
     val type: Int,

@@ -1,4 +1,4 @@
-package com.alongo.manyweather.data.model.weather
+package com.alongo.manyweather.data.model.entity.weather
 
 import com.google.gson.annotations.SerializedName
 
