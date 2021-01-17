@@ -23,6 +23,6 @@ class AppModule {
         return Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gsonInstance))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .baseUrl(WEATHER_API_ENDPOINT)
-            .build()!!
+            .build()
     }
 }
