@@ -18,6 +18,7 @@ import com.alongo.manyweather.utilities.doBeforeFirst
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.layout_weather_forecast.*
+import kotlinx.coroutines.flow.onEach
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import java.util.concurrent.TimeUnit
@@ -46,6 +47,7 @@ class MainFragment : BaseFragment() {
         viewModel.weatherData
             .asFlow()
             .doBeforeFirst { view?.includedLayoutWeatherForecastMainFragment?.visibility = View.VISIBLE }
+            .onEach { textInputLayout.error = null }
             .asLiveData()
             .observe(viewLifecycleOwner, Observer<Weather> { weather ->
                 bindWeatherToUi(weather)
