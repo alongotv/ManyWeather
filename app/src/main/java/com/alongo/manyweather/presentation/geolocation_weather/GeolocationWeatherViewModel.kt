@@ -1,15 +1,15 @@
 package com.alongo.manyweather.presentation.geolocation_weather
 
 import androidx.lifecycle.ViewModel
-import com.alongo.manyweather.data.model.weather.Weather
-import com.alongo.manyweather.data.networking.WeatherAPI
+import com.alongo.manyweather.data.model.entity.weather.Weather
+import com.alongo.manyweather.domain.interactor.WeatherInteractor
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
-class GeolocationWeatherViewModel @Inject constructor(private val weatherAPI: WeatherAPI) :
+class GeolocationWeatherViewModel @Inject constructor(private val weatherInteractor: WeatherInteractor) :
     ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
@@ -17,10 +17,9 @@ class GeolocationWeatherViewModel @Inject constructor(private val weatherAPI: We
     val errorSubject: BehaviorSubject<String?> = BehaviorSubject.create()
 
     fun getWeatherByGeolocation(lat: Double, lon: Double) {
-        val weatherSubscription = weatherAPI.getWeatherByCoordinates(
+        val weatherSubscription = weatherInteractor.getWeatherByGeolocation(
                 latitude = lat,
-                longitude = lon,
-                openWeatherToken = "1ce0002adc6d659ab342e693b333c059"
+                longitude = lon
             ).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ weather: Weather ->

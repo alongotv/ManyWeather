@@ -3,14 +3,15 @@ package com.alongo.manyweather.presentation.main
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.alongo.manyweather.data.model.weather.Weather
-import com.alongo.manyweather.data.networking.WeatherAPI
+import com.alongo.manyweather.data.model.entity.weather.Weather
+import com.alongo.manyweather.domain.interactor.WeatherInteractor
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(private val weatherAPI: WeatherAPI) : ViewModel() {
+class MainViewModel @Inject constructor(private val weatherInteractor: WeatherInteractor) :
+    ViewModel() {
     private val _weatherData: MutableLiveData<Weather> by lazy {
         MutableLiveData<Weather>()
     }
@@ -25,10 +26,8 @@ class MainViewModel @Inject constructor(private val weatherAPI: WeatherAPI) : Vi
 
     fun getWeatherByCityName(name: String) {
         errorData
-        val weatherSubscription = weatherAPI.getWeatherByCityName(
-            cityName = name,
-            openWeatherToken = "1ce0002adc6d659ab342e693b333c059"
-        ).subscribeOn(Schedulers.io())
+        val weatherSubscription = weatherInteractor.getWeatherByCityName(name)
+            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ weather: Weather ->
                 _weatherData.postValue(weather)
