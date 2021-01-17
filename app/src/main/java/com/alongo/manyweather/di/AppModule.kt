@@ -25,10 +25,4 @@ class AppModule {
             .baseUrl(WEATHER_API_ENDPOINT)
             .build()!!
     }
-
-    @Provides
-    @Singleton
-    fun provideWeatherApi(retrofit: Retrofit): WeatherAPI {
-        return retrofit.create(WeatherAPI::class.java)
-    }
 }
